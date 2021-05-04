@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>字节君</title>
+  
+  <subtitle>十年冷水，难凉热血</subtitle>
+  <link href="https://godeyes-algorithm/Godeyes-Algorithm.io/atom.xml" rel="self"/>
+  
+  <link href="https://godeyes-algorithm/Godeyes-Algorithm.io/"/>
+  <updated>2021-04-24T23:00:07.417Z</updated>
+  <id>https://godeyes-algorithm/Godeyes-Algorithm.io/</id>
+  
+  <author>
+    <name>Byte</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>如何优雅地学习计算机编程C++&lt;--&gt;输入输出格式控制</title>
+    <link href="https://godeyes-algorithm/Godeyes-Algorithm.io/2021/04/24/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/"/>
+    <id>https://godeyes-algorithm/Godeyes-Algorithm.io/2021/04/24/%E8%BE%93%E5%85%A5%E8%BE%93%E5%87%BA%E6%A0%BC%E5%BC%8F%E6%8E%A7%E5%88%B6/</id>
+    <published>2021-04-24T13:08:32.000Z</published>
+    <updated>2021-04-24T23:00:07.417Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="二进制输出整数"><a href="#二进制输出整数" class="headerlink" title="二进制输出整数"></a>二进制输出整数</h1><p>在计算机系统内的数据本身就是二进制</p><p><strong>思考：</strong>在C++中，如何通过cout函数来输出二进制的数字呢？</p><span id="more"></span><p><strong>所需库文件：</strong>1.iomanip          //管理C++格式控制</p><p>​                        2.bitset              //二进制</p><p><strong>示例代码：</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bitset&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="function"><span class="built_in">bitset</span>&lt;10&gt; <span class="title">a</span><span class="params">(<span class="number">5</span>)</span></span>;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; a;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>运行效果：</strong></p><p><a href="https://cloudimge.com/image/wRmJw"><img src="https://i.im5i.com/2021/04/24/wRmJw.png" alt="wRmJw.png"></a></p><p>在上述代码中，我们可以发现bitset函数后面有个 <strong>&lt;&gt;</strong> 号，它的实际含义，由读者进行更换 <strong>&lt;&gt;</strong> 里的数字，总结规律。</p><h1 id="不同进制输出"><a href="#不同进制输出" class="headerlink" title="不同进制输出"></a>不同进制输出</h1><p>有些读者可能想输出其他进制，例如：十六进制或八进制。下面教读者如何进行不同进制的输出。</p><p><strong>示例代码：</strong></p><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iomanip&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; hex &lt;&lt; <span class="number">123</span> &lt;&lt;<span class="built_in">endl</span>;<span class="comment">//十六进制 </span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; dec &lt;&lt; <span class="number">123</span> &lt;&lt;<span class="built_in">endl</span>;<span class="comment">//十进制 </span></span><br><span class="line"><span class="built_in">cout</span> &lt;&lt; oct &lt;&lt; <span class="number">123</span> &lt;&lt;<span class="built_in">endl</span>;<span class="comment">//八进制 </span></span><br><span class="line"><span class="keyword">return</span> <span class="number">0</span>; </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p><strong>hex:</strong> 十六进制    </p><p><strong>dec:</strong> 十进制    </p><p><strong>oct:</strong> 十进制</p><p>相信聪明的读者肯定明白如何进行不同的进制输出。</p><p><strong>思考：</strong></p><p>如果在上述代码中的“八进制”后，加一串代码：cout&lt;&lt;123;</p><p>会发生什么？有什么规律？</p><p><strong>答案：</strong></p><p>当</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cout &lt;&lt; oct（其他进制也可以） &lt;&lt; x（数的代号）</span><br></pre></td></tr></table></figure><p><strong>如果下面的代码，没有出现这样类似的代码，那么输出x将会是x的oct进制(其他进制也可以)。</strong></p><h1 id="小数的输出"><a href="#小数的输出" class="headerlink" title="小数的输出"></a>小数的输出</h1><p>​                    1.setprecision：有效数字X位。（x为未知数）</p><p>​                    2.fixed：强制的把float类型和double类型输出小数，而不是科学计数法的形式。通常跟setprecision搭配使用。</p><p>​                    3.setfill(‘*’)：字符填充，可以是字符常量或字符变量。—-&gt;setfill(‘x’)       //x为某个字符或数字</p><p>​                    4.scientific：科学计数法输出</p><p>​                    5.setw(n):c++中在输出操作中使用的字段宽度设置，设置输出的域宽，n表示字段宽度。<strong>只对紧接着的输出有效</strong>，紧接着的输出结束后又变回默认的域宽。当后面紧跟着的输出字段长度小于n的时候，在该字段前面用空格补齐；当输出字段长度大于n时，全部整体输出。</p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;二进制输出整数&quot;&gt;&lt;a href=&quot;#二进制输出整数&quot; class=&quot;headerlink&quot; title=&quot;二进制输出整数&quot;&gt;&lt;/a&gt;二进制输出整数&lt;/h1&gt;&lt;p&gt;在计算机系统内的数据本身就是二进制&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;思考：&lt;/strong&gt;在C++中，如何通过cout函数来输出二进制的数字呢？&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="计算机" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="C++" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/C/"/>
+    
+    <category term="如何优雅地学习计算机编程" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="信息学" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E4%BF%A1%E6%81%AF%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>拾贰季生态园游记</title>
+    <link href="https://godeyes-algorithm/Godeyes-Algorithm.io/2021/04/18/%E6%8B%BE%E8%B4%B0%E5%AD%A3%E7%94%9F%E6%80%81%E5%9B%AD%E6%B8%B8%E8%AE%B0/"/>
+    <id>https://godeyes-algorithm/Godeyes-Algorithm.io/2021/04/18/%E6%8B%BE%E8%B4%B0%E5%AD%A3%E7%94%9F%E6%80%81%E5%9B%AD%E6%B8%B8%E8%AE%B0/</id>
+    <published>2021-04-18T03:46:02.000Z</published>
+    <updated>2021-04-24T22:59:18.233Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="1-文章"><a href="#1-文章" class="headerlink" title="1.文章"></a>1.文章</h2><p>​    人生最奥妙的风景，是内心的淡定与从容–杨绛。乘云而来，化风而去，四月的风不似三月，软绵无力，但拂于面，似春于我心中！乘大巴，聆歌声来到最后的目的地。</p><p>​    在经过庄严的升国旗仪式后，我们伴花前，往于水田中试着播撒春天的希望，脱其鞋，束其衣，手中紧握着水稻，脚底享受着泥的轻抚。呵，水都快淹过苗了。但若要我重新选择，我仍会选择如此，<strong>毕竟生活在阴沟中，但仍有人仰望星空，愿其做一枚白昼的月亮，不求炫目的荣华，不屑世俗的浪潮。</strong></p><p>​    清洗完脚后便进行体力活——军事障碍训练，同学们就像八卦阵一白一黑，有许多同学不废吹灰之力便顺利完成了所有挑战和一些体质较差的同学，包括我并不是十分完美，就如<strong>河中突兀的那块糙石与周围平滑光亮的鹅卵石格格不入，可努力就是把刻石刀将糙石打磨成一颗奇石，人亦如此，毕竟还有如此之多的星星需要我们去拯救，相信尘埃里会开出一朵花，因为曾有漫天星光，亮透胸膛</strong>。</p><p>​    在进行多项的活动后，同学们的体力严重透支，急需恰饭解决燃眉之急，这时一些”大厨“站了出来桥，那火如初龙，直窜云霄。那水与油锅之中，噼里啪啦。瞧那成品，皆是黑色。有些同学被逼无奈，搬出自己的干粮——方便面。可”大厨“们敢于尝试的精神是非常值得鼓励的，毕竟谁的人生没有犯过错，但只要努力便行。”<strong>五陵年少金市东银鞍。白马度春风落花踏尽游何处，笑入胡姬酒肆</strong>“中愿我们都是豪侠少年，充满激情。</p><p>​    <strong>黄河走东溟，白日落西海，逝川与流光，飘忽不待。</strong>恍惚间结束了？乘上大巴，望着夕阳，我陷入了思考，等会让我们重新开始！在这次社会实践活动中，我们始终寻找着快乐。可躺在车椅上，我们偶然发现，自己似乎没有收获到快乐。同学之间相互质疑，哦，我们亏了！事实截然截然相反，<strong>村上春树</strong>说过：<strong>追求得到之日即其终止之时，寻觅的过程亦即失去的过程。</strong>我们在学校学到的最重要的东西就是，最重要的东西，不可能在学校学到。那我们得到什么了呢？我们得到了锻炼，旧陈词就别搬上台了。我想我们得到了许多：春，团结，自信。但<strong>最重要的是我们的青春画卷再次点缀上五彩的颜色。我们与青春中感受春意，感受生活；于4月中，共学一室，共乐一地。</strong></p><h2 id="2-视频"><a href="#2-视频" class="headerlink" title="2.视频"></a>2.视频</h2><iframe src="//player.bilibili.com/player.html?aid=375187325&bvid=BV1Bo4y1f7AG&cid=325464148&page=1" style="width: 100%; height: 500px; max-width: 100%；align:center; padding:20px 0;" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;1-文章&quot;&gt;&lt;a href=&quot;#1-文章&quot; class=&quot;headerlink&quot; title=&quot;1.文章&quot;&gt;&lt;/a&gt;1.文章&lt;/h2&gt;&lt;p&gt;​    人生最奥妙的风景，是内心的淡定与从容–杨绛。乘云而来，化风而去，四月的风不似三月，软绵无力，但拂于面，似春于我心中</summary>
+      
+    
+    
+    
+    
+    <category term="游记" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E6%B8%B8%E8%AE%B0/"/>
+    
+    <category term="文艺复兴" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地学习计算机编程C++&lt;--&gt;Helloworld</title>
+    <link href="https://godeyes-algorithm/Godeyes-Algorithm.io/2021/04/09/helloworld/"/>
+    <id>https://godeyes-algorithm/Godeyes-Algorithm.io/2021/04/09/helloworld/</id>
+    <published>2021-04-09T13:38:57.000Z</published>
+    <updated>2021-04-24T22:59:02.036Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="0-导入"><a href="#0-导入" class="headerlink" title="0.导入"></a>0.导入</h1><p>​    在进行粗略的学习计算机底层知识和变量后，我们来开始编写年轻人的第一个程序–Helloworld。</p><p>​    我们需要用到的工具有：<strong>1.Dev-C++(也可以使用其他软件)2.脑子(最重要)</strong></p><span id="more"></span><h1 id="1-Dev-C-的软件介绍"><a href="#1-Dev-C-的软件介绍" class="headerlink" title="1.Dev-C++的软件介绍"></a>1.Dev-C++的软件介绍</h1><p>​    我们先来介绍Dev-C++的安装步骤和基本界面下面放出一段Dev-C++的<strong>下载链接</strong>:<a href="https://sm.myapp.com/original/Development/Dev-Cpp_5.11_TDM-GCC_4.9.2_Setup.exe">https://sm.myapp.com/original/Development/Dev-Cpp_5.11_TDM-GCC_4.9.2_Setup.exe</a></p><p>​    下载好安装程序(.exe)，双击点开，依次点击next，等待安装完毕。</p><p>​    紧接着进入软件配置，我推荐大家选择英语主题样式，根据个人喜好进行调整。</p><p>​    好的，我们现在终于见到Dev-C++的庐山真面目。</p><p><img src="https://i.im5i.com/2021/04/24/wRGTl.png" alt="Dev-C++"></p><h1 id="2-Helloworld"><a href="#2-Helloworld" class="headerlink" title="2.Helloworld"></a>2.Helloworld</h1><p>现在我们进入正题，依次点击”文件”–&gt;”新建”–&gt;”源代码”</p><p><img src="https://i.im5i.com/2021/04/24/wRKe7.png" alt="新建代码"></p><p><strong>1.保存文件</strong>——&gt;**”Ctrl+S”**保存文档–&gt;命名文档–&gt;放置于固定文件夹。</p><p><strong>2.编写代码</strong>——&gt;这里我放出hello world的代码。<strong>各位最好亲手抄代码，不要直接复制粘贴。</strong></p><p><a href="https://cloudimge.com/image/wRV62"><img src="https://i.im5i.com/2021/04/24/wRV62.png" alt="Helloworld代码"></a></p><p><strong>3.编译文件</strong>——&gt;点击<strong>编译</strong>(F9)或<strong>编译运行</strong>(F11)。若无报错，你便可以在文件所在的位置找到一个名为”你的文件名”.exe文件。效果如下</p><p><a href="https://cloudimge.com/image/wRdbP"><img src="https://i.im5i.com/2021/04/24/wRdbP.png" alt="Helloworld演示图"></a></p><h1 id="3-代码讲解"><a href="#3-代码讲解" class="headerlink" title="3.代码讲解"></a>3.代码讲解</h1><h3 id="include-lt-iostream-gt"><a href="#include-lt-iostream-gt" class="headerlink" title="#include &lt; iostream&gt;"></a>#include &lt; iostream&gt;</h3><p>include:包含</p><p>iostream:输入输出流</p><p><strong>思考：</strong>在运行中的程序，我们可以发现字的大小，颜色样式是固定的，为什么?</p><p><strong>原因：</strong>这个代码的意思是调用C++编译器中的iostrema库，将iostream库的代码复制进这个文件中，方便我们在下面调用cout函数。</p><h3 id="using-namespace-std"><a href="#using-namespace-std" class="headerlink" title="using namespace std;"></a>using namespace std;</h3><p>所谓namespace，是指标识符的各种可见范围。C++标准程序库中的所有标识符都被定义于一个名为std的namespace中。</p><h3 id="int-main"><a href="#int-main" class="headerlink" title="int main()"></a>int main()</h3><p>每个程序有且只有一个主函数,为程序的开始.</p><p>**函数:**为一组一起执行一个任务的语句。</p><h3 id="cout-lt-lt-”Helloworld”-lt-lt-endl-会在屏幕上显示消息”Helloworld“"><a href="#cout-lt-lt-”Helloworld”-lt-lt-endl-会在屏幕上显示消息”Helloworld“" class="headerlink" title="cout&lt;&lt;”Helloworld”&lt;&lt;endl;  //会在屏幕上显示消息”Helloworld“"></a>cout&lt;&lt;”Helloworld”&lt;&lt;endl;  //会在屏幕上显示消息”Helloworld“</h3><p>可以<strong>通俗</strong>的理解cout为显示器，&lt;&lt;为输出流，将右侧的hello world传送到显示器。（当然这样的说法只是为了帮助理解。）</p><h2 id="return-0"><a href="#return-0" class="headerlink" title="return 0;"></a>return 0;</h2><p><strong>作用：</strong>返回主函数main 0值</p><p>当然如果不写这个语句，编译器会自动返回0值。</p><p><strong>思考：</strong>return 1会发生什么？</p><h1 id="4-结尾-amp-作业"><a href="#4-结尾-amp-作业" class="headerlink" title="4.结尾&amp;作业"></a>4.结尾&amp;作业</h1><p>  年轻人的第1个程序就<strong>编写</strong>和<strong>理解</strong>完成了，但字节君将给大家布置一个作业–&gt;成绩表。</p><p>  效果图如下:</p><p><a href="https://cloudimge.com/image/wRfiD"><img src="https://i.im5i.com/2021/04/24/wRfiD.png" alt="作业演示图"></a></p>]]></content>
+    
+    
+    <summary type="html">&lt;h1 id=&quot;0-导入&quot;&gt;&lt;a href=&quot;#0-导入&quot; class=&quot;headerlink&quot; title=&quot;0.导入&quot;&gt;&lt;/a&gt;0.导入&lt;/h1&gt;&lt;p&gt;​    在进行粗略的学习计算机底层知识和变量后，我们来开始编写年轻人的第一个程序–Helloworld。&lt;/p&gt;
+&lt;p&gt;​    我们需要用到的工具有：&lt;strong&gt;1.Dev-C++(也可以使用其他软件)2.脑子(最重要)&lt;/strong&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="计算机" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="C++" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/C/"/>
+    
+    <category term="如何优雅地学习计算机编程" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="信息学" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E4%BF%A1%E6%81%AF%E5%AD%A6/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>如何优雅地学习计算机编程C++&lt;--&gt;计算机底层知识和变量</title>
+    <link href="https://godeyes-algorithm/Godeyes-Algorithm.io/2021/04/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E7%9F%A5%E8%AF%86%E5%92%8C%E5%8F%98%E9%87%8F/"/>
+    <id>https://godeyes-algorithm/Godeyes-Algorithm.io/2021/04/04/%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%BA%95%E5%B1%82%E7%9F%A5%E8%AF%86%E5%92%8C%E5%8F%98%E9%87%8F/</id>
+    <published>2021-04-04T13:38:57.000Z</published>
+    <updated>2021-05-03T12:23:04.336Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="0-导入"><a href="#0-导入" class="headerlink" title="0.导入"></a>0.导入</h1><p>  如何优雅地学习计算机编程。我们得首先了解编程是什么？打个比方–<strong>写信</strong>.</p><p>  大家都知道写信所用的语言双方都懂，这样的信才做到了信息交流，人和计算机也是如此人和计算机交流得用计算机听得懂的语言。</p><p>  要想学习编程就要先从<strong>底层</strong>学起，下面有一幅图帮助大家了解计算机的构成。</p><p><img src="https://i.im5i.com/2021/04/24/wRqQw.png" alt="计算机导论"></p><h1 id="1-CPU架构"><a href="#1-CPU架构" class="headerlink" title="1.CPU架构"></a>1.CPU架构</h1><p> 我们先从计算机的大脑CPU开始，假设CPU是一块长方形，它里面包含着三个脑，在大脑的构造中，左脑更着重于数字运算，右脑着重于语言处理，相对应的左脑便是运算器，右脑便是控制器。</p><p><img src="https://i.im5i.com/2021/04/24/wRgPn.png" alt="CPU架构"></p><p>  在CPU架构中必不可少的便是数据的处理输入和输出，而存放数据的有两种存储区内存储器和外存储器，简称内存和外存。CPU这个家伙只和内存玩耍而不跟外存交流，凡是经过CPU的数据只能读写到内存里，内存不内向，乐意跟外存玩耍，跟外存交换数据。</p><p>  在现在的主流计算机中，内存约为<strong>8G</strong>或<strong>16G</strong>，G可以粗略的换算为1亿，那么在8G的计算机空间便有<strong>8亿的人家</strong>，每位居民的门牌便是地址，而地址又是<strong>又长又臭</strong>，十分难记。</p><h1 id="2-变量"><a href="#2-变量" class="headerlink" title="2.变量"></a>2.变量</h1><h3 id="2-1变量的定义与操作"><a href="#2-1变量的定义与操作" class="headerlink" title="2.1变量的定义与操作"></a>2.1变量的定义与操作</h3><p>这时就轮到变量出场了，那么变量又是什么玩意？变量可以给数据进行<strong>命名赋值</strong>。</p><p><code>数据类型+变量名称</code></p><p><code>例子：int a;</code></p><p>​        <code>float bytespace,bytescore;</code></p><h3 id="2-2变量的占用大小"><a href="#2-2变量的占用大小" class="headerlink" title="2.2变量的占用大小"></a>2.2变量的占用大小</h3><p>在给变量进行命名中我们发现一个新的词汇<strong>数据类型</strong>，<img src="%5Cimages%5CC++%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E5%8D%A0%E7%94%A8%E5%A4%A7%E5%B0%8F.PNG" alt="C++数据类型占用大小"></p><p>这又是怎的一回事？来看看世界上第1台计算机–<strong>ENIAC</strong>。</p><p><img src="https://i.im5i.com/2021/04/24/wRN71.jpg" alt="世界上第一台计算机"></p><p>  这台计算机是用灯泡的亮和灭来代表1和0，那么它是如何进行数学运算的呢？</p><p>  一个灯泡是一位bit。一组灯泡里有8个灯泡为一字节bit，所以8bit=1Byte</p><p>  在C++中有10种数据类型，就举char和int为例，char占1byte,所以它的取值范围为0~2的8次方，如何理解？2的8次方中的8为1×8。1是占用大小—1Byte，8为1Byte=8bit，所以2的8次方的8次项就为**占用大小×8(bit)**。</p><p>  验证一下结论：int占用4Byte空间，套进公式得（取值范围=0~2的32次），32次=4(Byte)×8(bit)。</p><p>  很简单吧！有人说计算机又快**<del>又准</del><strong>，那么我将推翻这个</strong>悖论<strong>。在超过取值范围后，</strong>精度会丢失**。</p><h3 id="2-3变量的使用"><a href="#2-3变量的使用" class="headerlink" title="2.3变量的使用"></a>2.3变量的使用</h3><p>  那我们该如何正确<strong>食用</strong>变量呢？</p><ul><li><p><strong>读取变量值 +直接使用变量名</strong></p><ul><li><p>输出:cout&lt;&lt;a;</p></li><li><p>参与运算:c=a+1;</p></li></ul></li><li><p><strong>给变量赋值</strong></p><ul><li>输入:cin&gt;&gt;a;    或者     scanf(“%d”,&amp;a);</li><li>直接赋值:a=190;</li></ul></li></ul><p>大家初学C++，可能对一些语法不了解，我们先讲一下<strong>运算符</strong></p><table><thead><tr><th>算术运算符</th><th>+</th><th>-</th><th>*</th><th>/</th><th>%</th><th>++</th><th>–</th><th></th><th></th><th></th><th></th><th></th></tr></thead><tbody><tr><td><strong>逻辑运算符</strong></td><td>&amp;&amp;</td><td>||</td><td>!</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>位运算符</strong></td><td>&amp;</td><td>|</td><td>^</td><td>~</td><td>&gt;&gt;</td><td>&lt;&lt;</td><td></td><td></td><td></td><td></td><td></td><td></td></tr><tr><td><strong>赋值运算符</strong></td><td>=</td><td>+=</td><td>-=</td><td>*=</td><td>/=</td><td>%=</td><td>&lt;&lt;=</td><td>&gt;&gt;=</td><td>&amp;=</td><td>^=</td><td>|=</td><td>~=</td></tr><tr><td><strong>杂项运算符</strong></td><td>size of()</td><td>condition?:</td><td>,</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td></tr></tbody></table>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;0-导入&quot;&gt;&lt;a href=&quot;#0-导入&quot; class=&quot;headerlink&quot; title=&quot;0.导入&quot;&gt;&lt;/a&gt;0.导入&lt;/h1&gt;&lt;p&gt;  如何优雅地学习计算机编程。我们得首先了解编程是什么？打个比方–&lt;strong&gt;写信&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt; </summary>
+      
+    
+    
+    
+    
+    <category term="计算机" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/"/>
+    
+    <category term="C++" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/C/"/>
+    
+    <category term="如何优雅地学习计算机编程" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E5%A6%82%E4%BD%95%E4%BC%98%E9%9B%85%E5%9C%B0%E5%AD%A6%E4%B9%A0%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BC%96%E7%A8%8B/"/>
+    
+    <category term="信息学" scheme="https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E4%BF%A1%E6%81%AF%E5%AD%A6/"/>
+    
+  </entry>
+  
+</feed>
