@@ -60,20 +60,6 @@
 
   
   <url>
-    <loc>https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E6%B8%B8%E8%AE%B0/</loc>
-    <lastmod>2021-05-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/</loc>
-    <lastmod>2021-05-08</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E8%AE%A1%E7%AE%97%E6%9C%BA/</loc>
     <lastmod>2021-05-08</lastmod>
     <changefreq>daily</changefreq>
@@ -96,6 +82,20 @@
   
   <url>
     <loc>https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E4%BF%A1%E6%81%AF%E5%AD%A6/</loc>
+    <lastmod>2021-05-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E6%B8%B8%E8%AE%B0/</loc>
+    <lastmod>2021-05-08</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>https://godeyes-algorithm/Godeyes-Algorithm.io/tags/%E6%96%87%E8%89%BA%E5%A4%8D%E5%85%B4/</loc>
     <lastmod>2021-05-08</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
